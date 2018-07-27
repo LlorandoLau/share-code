@@ -1,0 +1,10 @@
+#!/bin/sh
+
+IFS='';
+echo $0;
+echo $1;
+echo $@;
+echo $*;
+echo $$;
+
+exit 0;

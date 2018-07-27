@@ -1,0 +1,19 @@
+#!/bin/sh
+
+func()
+{
+	echo -n "Enter your num: "
+	read num
+	return $num
+}
+
+func
+
+echo $?
+echo $?
+
+if [ $? -eq "1" ] ; then
+:
+else
+	echo is else sentence $?
+fi

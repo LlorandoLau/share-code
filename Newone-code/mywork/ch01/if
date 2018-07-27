@@ -1,0 +1,17 @@
+#!/bin/sh
+
+if [ $1 -eq 1 ];
+then
+	echo "is one"
+
+elif [ $1 -eq 2 ];
+then 
+	echo "is two";
+else
+	echo "another";
+fi
+
+echo -n "Anyword for me: "
+read word
+echo $word
+exit 0

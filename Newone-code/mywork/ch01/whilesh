@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo -n "Enter your num: "
+read num
+while [ "$num" != "11" ]; do
+	echo -n "Enter again: "
+	read num
+done
+
+exit 0

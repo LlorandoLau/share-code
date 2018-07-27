@@ -1,0 +1,27 @@
+#!/bin/sh
+
+gdialog --title "Questionnaire" --msgbox "Welcome to my homelike town" 9 28
+
+gdialog --title "Confirm Message" --yesno "Are you willing to take your part in ? " 9 18
+
+if [ $? != 0 ]; then
+	gdialog --infobox "Thank you anyway" 5 20
+	sleep 2
+	gdialog --clear
+	exit 0
+fi
+
+gdialog --title "Questionnaire" --inputbox "Please enter your name" 9 30 2>1.txt
+name=$(cat 1.txt)
+
+gdialog --menu "$name, what music do you like best?" 15 30 4 1 "Classical" 2 "Jazz" 3 "Country" 4 "Other" 2>1.txt
+music=$(cat 1.txt)
+if [ "$music" = "1" ]; then
+	gdialog --title "Likes Classical" --msgbox "Best choice" 12 25
+else
+	gdialog --title "Not like" --msgbox "Shame" 12 25
+fi
+
+sleep 2
+gdialog --clear
+exit 0

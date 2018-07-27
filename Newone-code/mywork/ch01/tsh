@@ -1,0 +1,4 @@
+#!/bin/sh
+
+num=1
+gdialog --title "look" --msgbox "Welcome to my homelike town" 9 28

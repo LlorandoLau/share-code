@@ -1,0 +1,9 @@
+#!/bin/sh
+
+foo(){
+	echo "Function foo is executing"
+}
+
+echo "$(foo)"
+
+exit 0

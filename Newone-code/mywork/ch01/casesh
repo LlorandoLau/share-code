@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo -n "Is it morning? Please Enter yes or no: "
+read answer
+
+case "$answer" in
+	yes | y*) echo "is morning";;
+	[Nn] | [Nn][Oo]) echo "is no morning";;
+	*) echo "what are you saying?";;
+esac
+
+exit 0

@@ -1,0 +1,52 @@
+通用操作：
+	open()、close()、read()、write()、ioctl()
+
+文件属性：（保存在inode）
+	名字、节点号
+	创建/修改日期、修改权限、
+	文件长度、保存位置
+
+	目录：保存其他文件的节点号和名字，每个数据项都是指向其他文件节点的连接
+
+文件描述符：
+	0：标准输入
+	1：标准输出
+	2：标准错误
+
+二、各种系统函数的调用实例
+write():
+
+headFile: unistd.h
+func: size_t write(int fildes,const void *buf,size_t nbytes);
+return: 0:has written nothing
+		-1:something wrong
+		>0: the item it has ever write
+param:		fildes：文件描述符
+			buf：将要写入的字符串
+			nbytes：将要数据长度
+
+close():
+	head: unistd.h
+	func: int close(int fildes)
+	return: 0：success
+			-1: error
+
+mmap:
+	head:	sys/mman.h
+	void *mmap(void *addr, size_t len, int prot, int flags, int fildes, off_t off)
+
+	addr:指定使用的内存地址，0，自动分配
+	len：使用的地址长度
+	prot：设置内存段的访问权限
+		PROT_READ：读
+		PROT_WRITE：写 
+		PROT_EXEC：执行
+	flags：对内存段的改变造成的影响
+		MAP_PRIVATE：只对本进程有限
+		MAP_SHARED：保存到磁盘文件中
+		MAP_FIXED：
+	fildes：文件描述符
+	off：指定文件的修改处
+
+msync：保存修改
+munmap：释放内存段

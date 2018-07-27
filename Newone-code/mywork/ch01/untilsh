@@ -1,0 +1,11 @@
+#!/bin/sh
+
+num=0
+until [ $num -eq 10 ]
+do
+	num=$num1
+done
+
+echo $num
+
+exit 0
